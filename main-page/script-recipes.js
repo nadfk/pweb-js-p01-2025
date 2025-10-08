@@ -79,7 +79,93 @@ function createRecipeCard(recipe) {
         </div>
     `;
     
+    const button = card.querySelector('.recipe-button');
+    button.addEventListener('click', () => showRecipeModal(recipe));
+    
     return card;
+}
+
+function showRecipeModal(recipe) {
+    const modal = document.createElement('div');
+    modal.className = 'recipe-modal';
+    
+    const roundedRating = Math.round(recipe.rating);
+    const stars = "★".repeat(roundedRating) + "☆".repeat(5 - roundedRating);
+    
+    modal.innerHTML = `
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>${recipe.name}</h2>
+                <button class="close-modal">×</button>
+            </div>
+            
+            <div class="modal-hero">
+                <img src="${recipe.image}" alt="${recipe.name}" class="modal-image">
+                
+                <div class="modal-info">
+                    <div class="quick-info">
+                        <div class="info-item">
+                            <span class="info-label">Prep Time</span>
+                            <span class="info-value">${recipe.prepTimeMinutes} mins</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Cook Time</span>
+                            <span class="info-value">${recipe.cookTimeMinutes} mins</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Servings</span>
+                            <span class="info-value">${recipe.servings}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Difficulty</span>
+                            <span class="info-value">${recipe.difficulty}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-meta">
+                        <div class="rating">
+                            <span class="stars">${stars}</span>
+                            <span>(${recipe.rating.toFixed(1)})</span>
+                        </div>
+                        <div class="tags">
+                            ${recipe.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-content-details">
+                <div class="ingredients">
+                    <h3>Ingredients</h3>
+                    <div class="ingredients-grid">
+                        ${recipe.ingredients.map(ing => `<li>${ing}</li>`).join('')}
+                    </div>
+                </div>
+                
+                <div class="instructions">
+                    <h3>Instructions</h3>
+                    <ol>
+                        ${recipe.instructions.map(step => `<li>${step}</li>`).join('')}
+                    </ol>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    document.body.style.overflow = 'hidden';
+    
+    modal.querySelector('.close-modal').addEventListener('click', () => {
+        document.body.removeChild(modal);
+        document.body.style.overflow = '';
+    });
+    
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            document.body.removeChild(modal);
+            document.body.style.overflow = '';
+        }
+    });
 }
 
 function displayRecipes() {

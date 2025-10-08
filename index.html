@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Recipe</title>
+</head>
+<body>
+    <script>
+        const firstName = localStorage.getItem("firstName");
+        
+        if (firstName) {
+            window.location.href = "main-page/recipes.html";
+        } else {
+            window.location.href = "login-page/login.html";
+        }
+    </script>
+</body>
+</html>

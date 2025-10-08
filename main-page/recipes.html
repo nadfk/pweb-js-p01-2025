@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Recipe - Recipes Collection</title>
+    <link rel="stylesheet" href="style-recipes.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-left">Go Recipe</div>
+        <div class="nav-right">
+            <span class="welcome-text">Welcome, <span id="userName">user</span></span>
+            <div class="avatar"></div>
+            <button class="btn-logout" id="logoutBtn">Logout</button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <h1 class="title">Find Your Favorite Recipe Here!</h1>
+        
+        <section class="search-container">
+            <input type="text" class="search-bar" id="searchBar" placeholder="Search">
+            <select class="select-bar" id="cuisineSelect">
+                <option value="">All Courses</option>
+            </select>
+            <span class="showing-text">Showing <span id="showingCount">0</span> of <span id="totalCount">0</span> courses</span>
+        </section>
+
+        <section class="recipes-section">
+            <div class="recipes-grid" id="recipesGrid">
+            </div>
+            <button class="btn-show-more" id="showMoreBtn">Show More</button>
+        </section>
+    </main>
+
+    <script src="script-recipes.js"></script>
+</body>
+</html>

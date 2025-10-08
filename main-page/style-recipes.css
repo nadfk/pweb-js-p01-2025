@@ -1,0 +1,398 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: #fff;
+    color: #333;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #27272A;
+    padding: 38px 90px;
+    height: 116px;
+}
+
+.nav-left {
+    font-weight: 700;
+    font-size: 30px;
+    color: #E4E4E7;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.welcome-text {
+    font-size: 20px;
+    font-weight: 400;
+    color: #E4E4E7;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.btn-logout {
+    background: #E4E4E7;
+    color: #27272A;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-logout:hover {
+    background: #d4d4d8;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 90px;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 290px;
+    width: 1261px;
+    height: 117px;
+    background: #18181B;
+    border-radius: 10px;
+    padding: 0 50px;
+    margin-bottom: 60px;
+}
+
+.search-bar {
+    width: 260px;
+    height: 45px;
+    background: transparent;
+    border: 1px solid #E4E4E7;
+    border-radius: 6px;
+    padding: 0 15px;
+    font-size: 14px;
+    color: #E4E4E7;
+    font-family: 'Poppins', sans-serif;
+}
+
+.search-bar::placeholder {
+    color: #E4E4E7;
+}
+
+.search-bar:focus {
+    outline: none;
+    border-color: #fff;
+}
+
+.select-bar {
+    width: 200px;
+    height: 45px;
+    background: transparent;
+    border: 1px solid #E4E4E7;
+    border-radius: 6px;
+    padding: 0 15px;
+    font-size: 14px;
+    color: #E4E4E7;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+.select-bar:focus {
+    outline: none;
+    border-color: #fff;
+}
+
+.select-bar option {
+    background: #18181B;
+    color: #E4E4E7;
+}
+
+.showing-text {
+    font-size: 14px;
+    color: #E4E4E7;
+    font-weight: 400;
+}
+
+.recipes-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+}
+
+.recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 304px);
+    gap: 51px 174.5px;
+    justify-content: center;
+}
+
+.recipe-card {
+    width: 304px;
+    height: 328px;
+    background: #E4E4E7;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+}
+
+.recipe-image {
+    width: 304px;
+    height: 99px;
+    object-fit: cover;
+    background: #d4d4d8;
+}
+
+.recipe-content {
+    padding: 36px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.recipe-name {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.recipe-info {
+    display: flex;
+    gap: 40px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.recipe-ingredients {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+.recipe-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.stars {
+    color: #fbbf24;
+}
+
+.recipe-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #71717A;
+    color: #E4E4E7;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.recipe-button:hover {
+    background: #52525b;
+}
+
+.btn-show-more {
+    width: 233px;
+    height: 60px;
+    background: #71717A;
+    color: #E4E4E7;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-show-more:hover {
+    background: #52525b;
+}
+
+.btn-show-more.hidden {
+    display: none;
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+    color: #71717A;
+}
+
+.no-results {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+    color: #71717A;
+}
+
+@media screen and (max-width: 1400px) {
+    .search-container {
+        width: 90%;
+        gap: 50px;
+        flex-wrap: wrap;
+        height: auto;
+        padding: 30px;
+    }
+    
+    .recipes-grid {
+        gap: 40px 100px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .navbar {
+        padding: 30px 40px;
+    }
+    
+    .main-content {
+        padding: 40px 30px;
+    }
+    
+    .recipes-grid {
+        grid-template-columns: repeat(2, 304px);
+        gap: 40px 80px;
+    }
+    
+    .search-container {
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 20px 20px;
+        height: auto;
+    }
+    
+    .nav-left {
+        font-size: 24px;
+    }
+    
+    .nav-right {
+        gap: 20px;
+    }
+    
+    .welcome-text {
+        font-size: 16px;
+    }
+    
+    .avatar {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .btn-logout {
+        padding: 6px 15px;
+        font-size: 12px;
+    }
+    
+    .title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    
+    .search-container {
+        width: 95%;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .search-bar, .select-bar {
+        width: 100%;
+    }
+    
+    .recipes-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        justify-items: center;
+    }
+    
+    .recipe-card {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .recipe-image {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-left {
+        font-size: 20px;
+    }
+    
+    .nav-right {
+        gap: 15px;
+    }
+    
+    .welcome-text {
+        font-size: 14px;
+    }
+    
+    .welcome-text span {
+        display: block;
+    }
+    
+    .avatar {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .title {
+        font-size: 24px;
+    }
+    
+    .search-container {
+        padding: 15px;
+    }
+    
+    .showing-text {
+        font-size: 12px;
+    }
+    
+    .btn-show-more {
+        width: 180px;
+        height: 50px;
+        font-size: 16px;
+    }
+}

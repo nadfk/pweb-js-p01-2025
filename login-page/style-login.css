@@ -1,0 +1,135 @@
+* { box-sizing: border-box; margin: 0; padding: 0;}
+body {
+    font-family: 'Poppins', Arial, sans-serif; 
+    background: #fff;
+    color: #333;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0d1b2a; color: #fff;
+    padding: 15px 40px;
+}
+
+.nav-left {
+    font-weight: 600; 
+    font-size: 1.3rem;
+}
+.nav-right{
+    display: flex;
+    gap: 10px;
+}
+.btn1, .btn2 {
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor:pointer;
+    font-weight: 500;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+.btn1 {
+    border-color:#fff ;
+    background: transparent;
+    color: #fff;
+}
+
+.btn1:hover {
+    background: #fff; color: #0d1b2a;
+}
+
+.btn2 {
+    background: #2f3640;
+    color: #fff;
+}
+.btn2:hover {
+    background: #fff; color: #2f3640;
+    border-color: #2f3640;
+}
+.btn2.full {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.main h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.card{
+    background: #fafafa;
+    border-radius: 10px;
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.field{
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.req {color: red;}
+input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+input:focus{
+    border-color: #0d1b2a;
+    outline: none;
+}
+
+.error{
+    color: #d9534f;
+    font-size: 0.85rem;
+    min-height: 1rem;
+}
+
+.status {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.spinner {
+    width: 16px; height: 16px;
+    border: 2px solid #ccc;
+    border-top-color:#0d1b2a;
+    border-radius: 75%;
+    display: inline-block;
+    margin-right: 6px;
+    animation: spin 0.8s linear infinate;
+}
+
+@keyframes spin { to {transform: rotate(360deg);}}

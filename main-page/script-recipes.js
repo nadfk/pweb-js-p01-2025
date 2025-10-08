@@ -55,8 +55,9 @@ function createRecipeCard(recipe) {
     const card = document.createElement("div");
     card.className = "recipe-card";
     
-    const rating = Math.round(recipe.rating);
-    const stars = "★".repeat(rating) + "☆".repeat(5 - rating);
+    const roundedRating = Math.round(recipe.rating);
+    const stars = "★".repeat(roundedRating) + "☆".repeat(5 - roundedRating);
+    const numericalRating = recipe.rating.toFixed(1);
     
     const ingredientsText = recipe.ingredients.slice(0, 3).join(", ");
     
@@ -72,7 +73,7 @@ function createRecipeCard(recipe) {
             <div class="recipe-ingredients">Ingredients: ${ingredientsText}${recipe.ingredients.length > 3 ? '...' : ''}</div>
             <div class="recipe-rating">
                 <span class="stars">${stars}</span>
-                <span>(${recipe.reviewCount})</span>
+                <span>(${numericalRating})</span>
             </div>
             <button class="recipe-button">View Full Recipe</button>
         </div>

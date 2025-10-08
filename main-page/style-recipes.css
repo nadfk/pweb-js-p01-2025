@@ -78,12 +78,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 290px;
-    width: 1261px;
-    height: 117px;
+    gap: 30px;
+    max-width: 1261px;
+    width: 100%;
     background: #18181B;
     border-radius: 10px;
-    padding: 0 50px;
+    padding: 20px 50px;
     margin-bottom: 60px;
 }
 
@@ -114,7 +114,14 @@ body {
     background: transparent;
     border: 1px solid #E4E4E7;
     border-radius: 6px;
-    padding: 0 15px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E4E4E7' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 15px;
+    padding: 0 35px 0 15px; 
     font-size: 14px;
     color: #E4E4E7;
     font-family: 'Poppins', sans-serif;
@@ -154,7 +161,8 @@ body {
 
 .recipe-card {
     width: 304px;
-    height: 328px;
+    display: flex;
+    flex-direction: column;
     background: #E4E4E7;
     border-radius: 10px;
     overflow: hidden;
@@ -173,16 +181,17 @@ body {
 }
 
 .recipe-content {
-    padding: 36px 20px 20px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     gap: 7px;
 }
 
 .recipe-name {
     font-size: 20px;
     font-weight: 500;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .recipe-info {
@@ -213,7 +222,7 @@ body {
 }
 
 .recipe-button {
-    margin-top: 15px;
+    margin-top: auto;
     padding: 10px 20px;
     background: #71717A;
     color: #E4E4E7;
@@ -271,6 +280,7 @@ body {
         flex-wrap: wrap;
         height: auto;
         padding: 30px;
+        justify-content: center;
     }
     
     .recipes-grid {
@@ -334,10 +344,13 @@ body {
         width: 95%;
         gap: 20px;
         padding: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     .search-bar, .select-bar {
         width: 100%;
+        max-width: none;
     }
     
     .recipes-grid {
@@ -384,6 +397,12 @@ body {
     
     .search-container {
         padding: 15px;
+        flex-direction: column;
+    }
+    
+    .search-bar, .select-bar {
+        width: 100%;
+        max-width: none;
     }
     
     .showing-text {

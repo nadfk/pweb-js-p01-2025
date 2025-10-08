@@ -50,7 +50,7 @@ function handleLogin(event) {
         statusEl.style.color = "green";
         statusEl.textContent = "Login berhasil! Mengarahkan...";
         setTimeout(function () {
-            window.location.href = "main-page/recipes.html";
+            window.location.href = "../main-page/recipes.html";
         }, 1000);
     })
         .catch(function (error) {

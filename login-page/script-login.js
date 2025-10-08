@@ -3,6 +3,7 @@ var usernameInput = document.getElementById("username");
 var passwordInput = document.getElementById("password");
 var loginForm = document.getElementById("loginForm");
 var statusEl = document.getElementById("status");
+var togglePasswordBtn = document.getElementById("togglePassword");
 // Fungsi utama untuk login
 function handleLogin(event) {
     event.preventDefault();
@@ -61,3 +62,31 @@ function handleLogin(event) {
 }
 // Pasang event listener ke form
 loginForm.addEventListener("submit", handleLogin);
+// Toggle password visibility
+togglePasswordBtn.addEventListener("click", function() {
+    const type = passwordInput.type === "password" ? "text" : "password";
+    passwordInput.type = type;
+    
+    // Toggle eye icon
+    togglePasswordBtn.querySelector("i").className = 
+        `fas fa-eye${type === "password" ? "" : "-slash"}`;
+});
+// Handle enter key press
+usernameInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        passwordInput.focus();
+    }
+});
+
+passwordInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        handleLogin(event);
+    }
+});
+
+// Prevent showing password icon from submitting form
+togglePasswordBtn.addEventListener("mousedown", function(event) {
+    event.preventDefault();
+});

@@ -6,38 +6,52 @@
     <title>Go Recipe-Login</title>
     <link rel="stylesheet" href="style-login.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header class="navbar">
         <div class="nav-left">Go Recipe</div>
         <div class="nav-right">
-            <button class="btn1">Sign Up</button>
             <button class="btn1">Log In</button>
         </div>
     </header>
 
     <main class="main">
-        <h1>Get Started!</h1>
-        <p class="subtitle">Find Your Favorite Recipe Here!</p>
-
-        <section class="card">
-            <form id="loginForm">
-                <div class="field">
-                    <label for="username">Username or Email <span class="req">*</span></label>
-                    <input id="username" type="text" placeholder="johndoe@example.com" required/>
-                    <p class="error" id="userError"></p>
+        <div class="login-container">
+            <div class="login-card">
+                <div class="card-header">
+                    <h1>Welcome Back!</h1>
+                    <p class="subtitle">Find Your Favorite Recipe Here!</p>
                 </div>
 
-                <div class="field">
-                    <label for="password">Password <span class="req">*</span></label>
-                    <input id="password" type="text" placeholder="Password" required/>
-                    <p class="error" id="userError"></p>
-                </div>
+                <form id="loginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="username">Username or Email</label>
+                        <div class="input-group">
+                            <i class="fas fa-user input-icon"></i>
+                            <input type="text" id="username" placeholder="Enter your username / email" required>
+                        </div>
+                    </div>
 
-                <div id="status" class="status"></div>
-                <button type="submit" class="btn2">Log In</button>
-            </form>
-        </section>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-group password-group">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password" id="password" placeholder="Enter your password" required>
+                            <button type="button" id="togglePassword" class="password-toggle">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="status" class="status"></div>
+                    
+                    <button type="submit" class="btn2">Log In</button>
+
+                    
+                </form>
+            </div>
+        </div>
     </main>
 
     <script src="script-login.js" defer></script>
